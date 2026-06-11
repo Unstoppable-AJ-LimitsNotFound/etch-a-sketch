@@ -6,3 +6,10 @@ for (let i = 0; i < 256; i++) {
 
     container.appendChild(gridDiv);
 }
+
+const gridDivs = document.querySelectorAll(".gridDiv");
+gridDivs.forEach((gridDiv) => {
+    gridDiv.addEventListener("mouseenter", () => {
+        gridDiv.classList.add("hovered");
+    });
+});
