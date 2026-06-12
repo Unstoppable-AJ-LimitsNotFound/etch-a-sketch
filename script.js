@@ -35,12 +35,30 @@ function randomColorGrid() {
         g = Math.floor(Math.random() * 256);
         b = Math.floor(Math.random() * 256);
     }
-
+    
     const gridDivs = document.querySelectorAll(".gridDiv");
     gridDivs.forEach((gridDiv) => {
         gridDiv.addEventListener("mouseenter", () => {
             randomColorGenerator();
             gridDiv.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        });
+    });
+}
+
+function progressivelyDarkenGrid() {
+    let     sum = 0;
+    const gridDivs = document.querySelectorAll(".gridDiv");
+    gridDivs.forEach((gridDiv) => {
+        gridDiv.addEventListener("mouseenter", () => {
+            gridDiv.classList.add("hovered");
+
+            if (sum < 100) {
+                sum += 10;
+            } else {
+                sum = 0;
+            }
+
+            gridDiv.style.opacity = `${sum}%`;
         });
     });
 }
@@ -71,3 +89,6 @@ btn2.addEventListener("click", () => colorGrid());
 
 const btn3 = document.querySelector("#multiColor");
 btn3.addEventListener("click", () => randomColorGrid());
+
+const btn4 = document.querySelector("#darken");
+btn4.addEventListener("click", () => progressivelyDarkenGrid());
