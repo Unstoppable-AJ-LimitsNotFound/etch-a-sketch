@@ -8,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    align-items: center;
 }
 
 #container {
@@ -30,11 +31,21 @@ body {
     background-color: red;
 }
 
+.button-container {
+    display: flex;
+    /* justify-content: space-evenly; */
+}
+
 button {
-    width: 100px;
+    width: 150px;
     height: 30px;
     font-weight: bolder;
-    margin: auto;
+    /* margin: auto; */
+    margin: 0 50px;
+}
+
+#resize {
+    background-color: yellow;
 }
 
 h1 {

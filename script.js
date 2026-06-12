@@ -12,8 +12,8 @@ function makeGrid(numOfCellsInRow) {
         let sideLengthOfCell = (400 / numOfCellsInRow);
         gridDiv.style.height = sideLengthOfCell + "px";
         gridDiv.style.width = sideLengthOfCell + "px";
-        
-        
+
+
         container.appendChild(gridDiv);
     }
 }
@@ -23,6 +23,24 @@ function colorGrid() {
     gridDivs.forEach((gridDiv) => {
         gridDiv.addEventListener("mouseenter", () => {
             gridDiv.classList.add("hovered");
+        });
+    });
+}
+
+function randomColorGrid() {
+
+    let r, g, b;
+    function randomColorGenerator() {
+        r = Math.floor(Math.random() * 256);
+        g = Math.floor(Math.random() * 256);
+        b = Math.floor(Math.random() * 256);
+    }
+
+    const gridDivs = document.querySelectorAll(".gridDiv");
+    gridDivs.forEach((gridDiv) => {
+        gridDiv.addEventListener("mouseenter", () => {
+            randomColorGenerator();
+            gridDiv.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         });
     });
 }
@@ -37,15 +55,19 @@ function removeGrid() {
 
 
 //Execution flow
-const btn = document.querySelector("button");
-btn.addEventListener("click", () => {
+const btn1 = document.querySelector("#resize");
+btn1.addEventListener("click", () => {
     numOfCellsInRow = Number(prompt("Enter the number of cells you want in a row or column of the grid (<100): "));
-    
+
     removeGrid();
-    
+
     makeGrid(numOfCellsInRow);
 
-    colorGrid();
-
+    alert("Choose a mode and have FUN!!!");
 });
 
+const btn2 = document.querySelector("#singleColor");
+btn2.addEventListener("click", () => colorGrid());
+
+const btn3 = document.querySelector("#multiColor");
+btn3.addEventListener("click", () => randomColorGrid());
