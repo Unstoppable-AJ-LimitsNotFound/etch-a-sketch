@@ -22,6 +22,7 @@ function colorGrid() {
     gridDivs.forEach((gridDiv) => {
         gridDiv.addEventListener("mouseenter", () => {
             gridDiv.classList.add("hovered");
+            btn5.classList.add("yellow");
         });
     });
 }
@@ -52,6 +53,7 @@ function randomColorGrid() {
         gridDiv.addEventListener("mouseenter", () => {
             randomColorGenerator();
             gridDiv.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            btn5.classList.add("yellow");
         });
     });
 }
@@ -70,6 +72,7 @@ function progressivelyDarkenGrid() {
             }
 
             gridDiv.style.opacity = `${sum}%`;
+            btn5.classList.add("yellow");
         });
     });
 }
@@ -125,4 +128,7 @@ btn4.addEventListener("click", () => {
 });
 
 const btn5 = document.querySelector("#resketch");
-btn5.addEventListener("click", () => emptyGrid());
+btn5.addEventListener("click", () => {
+    emptyGrid();
+    btn5.classList.remove("yellow");
+});
