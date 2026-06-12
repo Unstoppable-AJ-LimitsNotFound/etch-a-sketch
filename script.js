@@ -27,6 +27,14 @@ function colorGrid() {
     });
 }
 
+let valueEntered;
+function emptyGrid() {
+
+    removeGrid();
+
+    makeGrid(valueEntered);
+}
+
 function randomColorGrid() {
 
     let r, g, b;
@@ -46,7 +54,7 @@ function randomColorGrid() {
 }
 
 function progressivelyDarkenGrid() {
-    let     sum = 0;
+    let sum = 0;
     const gridDivs = document.querySelectorAll(".gridDiv");
     gridDivs.forEach((gridDiv) => {
         gridDiv.addEventListener("mouseenter", () => {
@@ -76,19 +84,42 @@ function removeGrid() {
 const btn1 = document.querySelector("#resize");
 btn1.addEventListener("click", () => {
     numOfCellsInRow = Number(prompt("Enter the number of cells you want in a row or column of the grid (<100): "));
+    valueEntered = numOfCellsInRow;
 
     removeGrid();
 
     makeGrid(numOfCellsInRow);
 
     alert("Choose a mode and have FUN!!!");
+
+    btn2.style.backgroundColor = "revert";
+    btn3.style.backgroundColor = "revert";
+    btn4.style.backgroundColor = "revert";
 });
 
 const btn2 = document.querySelector("#singleColor");
-btn2.addEventListener("click", () => colorGrid());
+btn2.addEventListener("click", () => {
+    colorGrid();
+    btn2.style.backgroundColor = "greenyellow";
+    btn3.style.backgroundColor = "revert";
+    btn4.style.backgroundColor = "revert";
+});
 
 const btn3 = document.querySelector("#multiColor");
-btn3.addEventListener("click", () => randomColorGrid());
+btn3.addEventListener("click", () => {
+    randomColorGrid();
+    btn2.style.backgroundColor = "revert";
+    btn3.style.backgroundColor = "greenyellow";
+    btn4.style.backgroundColor = "revert";
+});
 
 const btn4 = document.querySelector("#darken");
-btn4.addEventListener("click", () => progressivelyDarkenGrid());
+btn4.addEventListener("click", () => {
+    progressivelyDarkenGrid()
+    btn2.style.backgroundColor = "revert";
+    btn3.style.backgroundColor = "revert";
+    btn4.style.backgroundColor = "greenyellow";
+});
+
+const btn5 = document.querySelector("#resketch");
+btn5.addEventListener("click", () => emptyGrid());

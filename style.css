@@ -41,10 +41,10 @@ button {
     height: 30px;
     font-weight: bolder;
     /* margin: auto; */
-    margin: 0 50px;
+    margin: 0 25px;
 }
 
-#resize {
+.yellow {
     background-color: yellow;
 }
 
