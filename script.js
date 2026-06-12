@@ -1,7 +1,6 @@
 const body = document.querySelector("body");
 let container = document.querySelector("#container");
 
-
 function makeGrid(numOfCellsInRow) {
 
     let totalNumOfCellsInGrid = numOfCellsInRow * numOfCellsInRow;
@@ -31,8 +30,12 @@ let valueEntered;
 function emptyGrid() {
 
     removeGrid();
-
+    
     makeGrid(valueEntered);
+
+    btn2.style.backgroundColor = "revert";
+    btn3.style.backgroundColor = "revert";
+    btn4.style.backgroundColor = "revert";
 }
 
 function randomColorGrid() {
