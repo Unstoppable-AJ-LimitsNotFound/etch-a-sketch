@@ -98,8 +98,6 @@ btn1.addEventListener("click", () => {
     makeGrid(numOfCellsInRow);
 
     alert("Choose a mode and have FUN!!!");
-
-    buttonColorReset();
 });
 
 
