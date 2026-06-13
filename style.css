@@ -27,10 +27,6 @@ body {
     width: 25px; */
 }
 
-.hovered {
-    background-color: red;
-}
-
 .button-container {
     display: flex;
     /* justify-content: space-evenly; */
