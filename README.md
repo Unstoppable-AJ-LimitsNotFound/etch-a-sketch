@@ -1,11 +1,11 @@
 # Etch-A-Sketch
 
-A browser-based sketchpad/Etch-A-Sketch built with vanilla HTML, CSS (Flexbox), and JavaScript — Project 4 of [The Odin Project](https://www.theodinproject.com/) Foundations course.
+A browser-based sketchpad/Etch-A-Sketch built with vanilla HTML, CSS (Flexbox), and JavaScript — Project 4 of [The Odin Project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch) Foundations course.
 
 ## Live Demo / Repo
 
-- **Live demo:** _[add link]_
-- **Repo:** _[add link]_
+- **Live demo:** [Etch-a-Sketch](https://unstoppable-aj-limitsnotfound.github.io/etch-a-sketch/)
+- **Repo:** [GitHub Repository](https://github.com/Unstoppable-AJ-LimitsNotFound/etch-a-sketch)
 
 ## Features
 
